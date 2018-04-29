@@ -1,0 +1,10 @@
+/home/bryan/Documents/dealii-tutorials/indstud/CMakeFiles/edit_cache.dir
+/home/bryan/Documents/dealii-tutorials/indstud/CMakeFiles/rebuild_cache.dir
+/home/bryan/Documents/dealii-tutorials/indstud/CMakeFiles/info.dir
+/home/bryan/Documents/dealii-tutorials/indstud/CMakeFiles/strip_comments.dir
+/home/bryan/Documents/dealii-tutorials/indstud/CMakeFiles/distclean.dir
+/home/bryan/Documents/dealii-tutorials/indstud/CMakeFiles/runclean.dir
+/home/bryan/Documents/dealii-tutorials/indstud/CMakeFiles/unit-cell-matrices.dir
+/home/bryan/Documents/dealii-tutorials/indstud/CMakeFiles/debug.dir
+/home/bryan/Documents/dealii-tutorials/indstud/CMakeFiles/run.dir
+/home/bryan/Documents/dealii-tutorials/indstud/CMakeFiles/release.dir

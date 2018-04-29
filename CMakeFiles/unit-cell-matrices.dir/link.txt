@@ -1,0 +1,1 @@
+/usr/bin/c++      -rdynamic -fuse-ld=gold -pthread -ggdb CMakeFiles/unit-cell-matrices.dir/unit-cell-matrices.cc.o  -o unit-cell-matrices -rdynamic /opt/dealii-lib/lib/libdeal_II.g.so.8.5.1 -llapack -lblas -lgfortran -lquadmath -lm -lc -ldl -lz -lrt -Wl,-rpath,/opt/dealii-lib/lib 
