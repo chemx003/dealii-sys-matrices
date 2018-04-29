@@ -27,6 +27,7 @@
 #include <deal.II/base/point.h>
 #include <fstream>
 #include <iostream>
+
 namespace unitcell
 {
 	//  Class declaration
@@ -208,15 +209,118 @@ namespace unitcell
 		output3.close();
 		
 		//  Sort the DOFs
+		std::string filename4 = "sorted-dof-list";
+		filename4 +=".txt";
+		std::ofstream output4 (filename4);
+
 		//  check interior
+		output4 << "int dofs:    ";
+		for(unsigned int i=0; i<dof_handler.n_dofs(); i++)
+		{
+			if(std::abs( (support_points[i])(0) ) < 1.0 &&
+					std::abs( (support_points[i])(1) ) < 1.0)
+			{
+				output4		<< i+1 << " ";
+			}
+		}
+		output4 << "\n";
+
 		//  bot
+		output4 << "bottom dofs:    ";
+		for(unsigned int i=0; i<dof_handler.n_dofs(); i++)
+		{
+			if( (support_points[i])(1) == -1.0 &&
+					std::abs( (support_points[i])(0)) < 1.0)
+			{
+				output4		<< i+1 << " ";
+			}
+		}
+		output4 << "\n";
+
 		//  top
+		output4 << "top dofs:    ";
+		for(unsigned int i=0; i<dof_handler.n_dofs(); i++)
+		{
+			if( (support_points[i])(1) == 1.0 && 
+					std::abs( (support_points[i])(0)) <1.0)
+			{
+				output4		<< i+1  << " ";
+			}
+		}
+		output4 << "\n";
+
 		//  right
+		output4 << "right dofs:    ";
+		for(unsigned int i=0; i<dof_handler.n_dofs(); i++)
+		{
+			if( (support_points[i])(0) == 1.0 && 
+					std::abs( (support_points[i])(1)) <1.0)
+			{
+				output4		<< i+1 << " ";
+			}
+		}
+		output4 << "\n";
+
 		//  left
+		output4 << "left dofs:    ";
+		for(unsigned int i=0; i<dof_handler.n_dofs(); i++)
+		{
+			if( (support_points[i])(0) == -1.0 && 
+					std::abs( (support_points[i])(1)) <1.0)
+			{
+				output4		<< i+1 << " ";
+			}
+		}
+		output4 << "\n";
+
 		//  lb
+		output4 << "left-bottom corner dofs:    ";
+		for(unsigned int i=0; i<dof_handler.n_dofs(); i++)
+		{
+			if( (support_points[i])(0) == -1.0 && 
+					(support_points[i])(1) == -1.0)
+			{
+				output4		<< i+1 << " ";
+			}
+		}
+		output4 << "\n";
+
 		//  rb
+		output4 << "right-bottom corner dofs:    ";
+		for(unsigned int i=0; i<dof_handler.n_dofs(); i++)
+		{
+			if( (support_points[i])(0) == 1.0 && 
+					(support_points[i])(1) == -1.0)
+			{
+				output4		<< i+1 << " ";
+			}
+		}
+		output4 << "\n";
+
 		//  lt
+		output4 << "left-top corner dofs:    ";
+		for(unsigned int i=0; i<dof_handler.n_dofs(); i++)
+		{
+			if( (support_points[i])(0) == -1.0 && 
+					(support_points[i])(1) == 1.0)
+			{
+				output4		<< i+1 << " ";
+			}
+		}
+		output4 << "\n";
+
 		//  rt
+		output4 << "right-top corner top:    ";
+		for(unsigned int i=0; i<dof_handler.n_dofs(); i++)
+		{
+			if( (support_points[i])(0) == 1.0 && 
+					(support_points[i])(1) == 1.0)
+			{
+				output4		<< i+1 << " ";
+			}
+		}
+		output4 << "\n";
+		output4.close();
 	}
 
 	template<int dim>
